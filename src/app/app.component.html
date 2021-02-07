@@ -16,7 +16,7 @@
 
     <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
     <div class="form-group col" >
-      <label >Payee Name</label >
+      <label class="padding-label">Payee Name</label >
       <label >
         <input
           (input)="onNameChg($event)"
@@ -53,7 +53,7 @@
 
     <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
     <div class="form-group col" >
-      <label >Payment Date</label >
+      <label class="padding-label">Payment Date</label >
       <label >
         <input
           (input)="onDateChg($event)"
@@ -72,7 +72,7 @@
 
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
       <div class="CLASS_NAME" >
-        <!-- TitleCasePipe -->
+        <!-- DatePipe -->
         {{ selectedDate | date: 'longDate' }}
       </div >
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
@@ -87,7 +87,7 @@
 
     <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
     <div class="form-group col" >
-      <label >Payment Amount</label >
+      <label class="padding-label">Payment Amount</label >
       <label >
         <input
           (input)="onAmtChg($event)"
@@ -106,14 +106,13 @@
 
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
       <div class="CLASS_NAME" >
-        <!-- TitleCasePipe -->
-        {{ amount | currency: 'DKK' }}
+        <!-- CurrencyPipe -->
+        {{ amount | currency: 'EUR' }}
       </div >
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
 
     </div >
   </div >
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
   <!--〄〄〄〄 CHILD-CONTAINER (- DecimalPipe -) 〄〄〄〄-->
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
@@ -121,7 +120,7 @@
 
     <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
     <div class="form-group col" >
-      <label >Height</label >
+      <label class="padding-label">Height</label >
       <label >
         <input
           (input)="onHtChg($event)"
@@ -132,50 +131,16 @@
     <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
 
     <!--〄〄〄〄 child-container 〄〄〄〄-->
-    <div class="col" >
-
-      <!--≈≈≈≈≈| Names |≈≈≈≈≈-->
-      <label ><b>Height</b></label >
-      <!--≈≈≈≈≈| Names |≈≈≈≈≈-->
-
-      <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
-      <div class="CLASS_NAME" >
-        <!-- TitleCasePipe -->
-        {{ height | number: '1.1-3' }} <!-- 1.1-3 = 17.567432: 17.567 -->
-      </div >
-      <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
-
-    </div >
-  </div >
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-
-  <!--〄〄〄〄 CHILD-CONTAINER (- DecimalPipe -) 〄〄〄〄-->
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-  <div class="row" >
-
-    <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
     <div class="form-group col" >
-      <label >Height</label >
-      <label >
-        <input
-          (input)="onHtChg($event)"
-          class="form-control"
-        >
-      </label >
-    </div >
-    <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
-
-    <!--〄〄〄〄 child-container 〄〄〄〄-->
-    <div class="col" >
 
       <!--≈≈≈≈≈| Names |≈≈≈≈≈-->
-      <label ><b>Height</b></label >
+      <label class="padding-label"><b>Height</b></label >
       <!--≈≈≈≈≈| Names |≈≈≈≈≈-->
 
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
-      <div class="CLASS_NAME" >
-        <!-- TitleCasePipe -->
-        {{ height | number: '1.1-3' }} <!-- 1.1-3 = 17.567432: 17.567 -->
+      <div >
+        <!-- DecimalPipe-->
+        <b>{{ height | number: '1.1-3' }}ft</b> <!-- 1.1-3 = 17.567432: 17.567 -->
       </div >
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
 
@@ -189,6 +154,7 @@
     <hr >
     <h5>Json Pipe For Debugging</h5>
     <br >
+    <!-- JSonPipe-->
     <b>{{ car | json }}</b>
     <hr >
   </div >
@@ -200,7 +166,7 @@
 
     <!--≈≈≈≈≈| INPUT(Payee Name) |≈≈≈≈≈-->
     <div class="form-group col" >
-      <label >Miles</label >
+      <label class="padding-label">Miles</label >
       <label >
         <input
           (input)="onMilesChg($event)"
@@ -218,9 +184,19 @@
       <!--≈≈≈≈≈| Names |≈≈≈≈≈-->
 
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
-      <div class="CLASS_NAME" >
+      <!--<div-->
+      <!--  *ngIf="(miles | convert: 'km') > 10"-->
+      <!--  class="CLASS_NAME" >-->
+      <!--  &lt;!&ndash; CustomPipe &ndash;&gt;-->
+      <!--  SHOW IF LESS THAN > 10: {{ miles | convert: 'km' }}-->
+      <!--</div >-->
+      <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
+
+      <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
+      <div
+        class="CLASS_NAME" >
         <!-- TitleCasePipe -->
-        {{ miles | convert: 'km' }} <!-- 1.1-3 = 17.567432: 17.567 -->
+        <b>{{ miles | convert: 'km' | number: '1.0-2' }}km</b>
       </div >
       <!--≈≈≈≈≈| NAME-PIPELINE-TITLE |≈≈≈≈≈-->
 
