@@ -14,18 +14,18 @@ export class ConvertPipe implements PipeTransform {
     switch (targetUnits) {
       //___________
       case km:
-        const result = `${value * 1.649}km`
-        console.log(`Target Units: ${result}`)
+        const result = value * 1.649
+        console.log(`Target Units: ${result}km`)
         return result
       //___________
       case m:
-        const result2 = `${(value * 1.649) * 1000}m`
-        console.log(`Target Units: ${result2}`)
+        const result2 = (value * 1.649) * 1000
+        console.log(`Target Units: ${result2}m`)
         return result2
       //___________
       case cm:
-        const result3 = `${((value * 1.649) * 1000) * 1000}cm`
-        console.log(`Target Units: ${result3}`)
+        const result3 = ((value * 1.649) * 1000) * 1000
+        console.log(`Target Units: ${result3}cm`)
         return result3
       //___________
         default:
